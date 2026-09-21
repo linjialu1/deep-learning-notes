@@ -1,47 +1,23 @@
 # deep-learning-notes
-记录《深度学习》课程的学习过程
-#第一天 
-  ##pytorch的框架介绍
-  - pytorch是深度学习的框架, python的第三方包, 数据是以张量类型存在
-  - pytorch特点
-  - 数据类型是张量类型
-  - 自动微分模块, 自动求导/梯度
-  - 可以在GPU/TPU/NPU上运行, 加速运行
-  - 兼容各种平台 系统/硬件(显卡)
-  - pytorch目前更新到2.5版本
-  ##什么是张量
-  张量是矩阵, 可以是多维
-  - 0维->标量
-  - 1维->[1 2 3 4 5]
-  - 2维->[[1 2 3],[4 5 6]]
-  - 3维
-  - 张量是通过类创建出来的对象，提供各种方法和属性
-  - ##张量的基本创建方式
-  - torch.tensor(data=): 指定数据
-  - torch.Tensor(data=, size=): 指定数据或形状
-  - torch.IntTensor(data=)/FloatTensor(): 指定数据
-  - ##线性和随机张量
-  - ###线性张量
-    - torch.arange()   
-    - torch.linspace()
-  - ###随机张量
-    - torch.rand()/randn()
-    - torch.randint()
-    - torch.initial_seed()
-    - torch.manual_seed()    设定随机种子
-#指定张量元素类型
-    -  tensor.type(dtype=***)
-#张量运算函数
-    - mean()
-    - sum()
-    - min()/max()
-    - dim: 按不同维度计算
-    - exp(): 指数
-    - sqrt(): 平方根
-    - pow(): 幂次方
-    - log()/log2()/log10(): 对数
-    - 运算方式也是加减乘除
+> 个人深度学习学习笔记与实验复盘仓库
 
+## 仓库介绍
+本仓库记录深度学习、机器学习的个人学习心得、实验记录、踩坑总结。
+内容仅为个人理解，难免存在错误，欢迎提 Issue 交流指正。
 
+## 目录导航
+- [PyTorch张量操作笔记](./docs/basic/tensor.md)
 
-    
+## 环境清单
+- Python:
+- PyTorch:
+
+## Commit 规范
+- `docs: add xxx notes` 新增笔记
+- `docs: update xxx` 更新笔记内容
+- `docs: fix typo` 修改笔误、公式错误
+- `code: add minimal demo` 添加最小示例代码
+
+## 更新计划
+- [ ] 待学习内容1
+- [ ] 待学习内容2
