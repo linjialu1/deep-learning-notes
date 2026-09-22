@@ -426,8 +426,108 @@ Adam 优化算法（Adaptive Moment Estimation，自适应矩估计）将 **Mome
   三种都有各自的优缺点，其中效果最好，资源占用最高的就是指数衰减。
 ---
 
+## 9. 学习率衰减优化方法
+
+### 9.1 为什么需要学习率衰减
+
+在训练神经网络时，一般情况下学习率都会随着训练而变化：
+
+- **训练后期学习率过高**：会造成 loss 的振荡，无法收敛到最优解
+- **学习率减小过慢**：又会造成收敛变慢，训练效率低
+
+> 学习率太小 → 梯度下降速度慢，训练时间长
+> 学习率太大 → 容易越过最小值点，导致震荡甚至梯度爆炸
+
+所以需要一种机制，让学习率随着训练过程自动调整。
+
+### 9.2 等间隔学习率衰减（StepLR）
+
+每隔固定的 epoch 数，学习率乘以一个系数 gamma。
+
+**调整方式**：`lr = lr * gamma`，每 `step_size` 个 epoch 调整一次
+
+**PyTorch 实现**：
+```python
+scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.5)
+```
+
+**参数说明**：
+- `step_size`：调整间隔数，每多少个 epoch 调整一次
+- `gamma`：调整系数，学习率乘以这个值
+
+**特点**：
+- 简单直观，容易调试
+- 学习率呈阶梯式下降
+
+### 9.3 指定间隔学习率衰减（MultiStepLR）
+
+在指定的 epoch 位置进行学习率衰减，比 StepLR 更灵活。
+
+**调整方式**：在指定的 milestones 位置，学习率乘以 gamma
+
+**PyTorch 实现**：
+```python
+milestones = [50, 125, 160]
+scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=0.5)
+```
+
+**参数说明**：
+- `milestones`：一个列表，指定在哪些 epoch 位置调整学习率
+- `gamma`：调整系数
+
+**特点**：
+- 可以自定义调整时机，比 StepLR 更灵活
+- 适合对训练过程有更精细控制的场景
+
+### 9.4 指数学习率衰减（ExponentialLR）
+
+学习率按指数方式平滑衰减，每个 epoch 都乘以 gamma。
+
+**调整方式**：`lr = lr * gamma^epoch`
+
+**PyTorch 实现**：
+```python
+scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.95)
+```
+
+**参数说明**：
+- `gamma`：指数的底，小于 1
+
+**特点**：
+- 平滑连续衰减，没有阶梯
+- 收敛稳定性较强
+
+### 9.5 手动更新学习率的流程
+
+在训练循环中使用学习率调度器的步骤：
+
+```python
+for epoch in range(max_epoch):
+    # 训练一个 epoch
+    for batch in dataloader:
+        loss = model(batch)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    # 更新学习率（每个 epoch 结束后调用）
+    scheduler.step()
+```
+
+> 注意：`scheduler.step()` 要放在每个 epoch 结束后调用，不是每个 batch 后。
+
+### 9.6 三种衰减方式对比
+
+| 方法 | 衰减方式 | 优点 | 适用场景 |
+|------|---------|------|---------|
+| **StepLR** | 固定步长阶梯衰减 | 简单直观，容易调试 | 大型数据集、较为简单的任务 |
+| **MultiStepLR** | 指定位置阶梯衰减 | 灵活，可自定义调整时机 | 对训练平稳性要求较高的任务 |
+| **ExponentialLR** | 指数平滑衰减 | 平滑连续，收敛稳定 | 高精度训练，避免过快收敛 |
+
+---
+
 ## 后续学习计划
 
-- [ ] 学习率衰减优化方法
+- [x] 学习率衰减优化方法
 - [ ] 正则化方法（Dropout、Batch Normalization）
 - [ ] 实战项目练习
