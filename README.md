@@ -14,7 +14,8 @@
 deep-learning-notes/
 ├── docs/
 │   ├── 01-pytorch/           # PyTorch 框架
-│   └── 02-neural-network/    # 神经网络基础
+│   ├── 02-neural-network/    # 神经网络基础
+│   └── 03-cnn/                # 卷积神经网络
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -25,7 +26,8 @@ deep-learning-notes/
 | 章节 | 内容 | 状态 |
 |------|------|------|
 | [01 - PyTorch 框架](./docs/01-pytorch/) | 张量创建与操作、自动微分、模型构建流程 | 已完成 |
-| [02 - 神经网络基础](./docs/02-neural-network/) | 激活函数、参数初始化、损失函数、反向传播、优化方法 | 学习中 |
+| [02 - 神经网络基础](./docs/02-neural-network/) | 激活函数、参数初始化、损失函数、反向传播、优化方法 | 已完成 |
+| [03 - 卷积神经网络](./docs/03-cnn/) | 卷积层、池化层、图像分类实战 | 学习中 |
 
 ## 环境清单
 
@@ -36,9 +38,9 @@ deep-learning-notes/
 
 - [x] PyTorch 框架基础
 - [x] 神经网络基础概念
+- [x] 实战项目练习（U-Net 图像分割）
 - [ ] 卷积神经网络（CNN）
 - [ ] 循环神经网络（RNN）
-- [ ] 实战项目练习
 
 ---
 
