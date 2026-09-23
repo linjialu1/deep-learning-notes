@@ -85,6 +85,12 @@ data/
 *.h5
 *.hdf5
 
+# Allow practice directory files
+!practice/**/data/
+!practice/**/data/*.csv
+!practice/**/model/
+!practice/**/model/*.pth
+
 # Logs
 logs/
 *.log
