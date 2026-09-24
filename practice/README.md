@@ -8,3 +8,4 @@
 |------|------|
 | [手机价格预测](./phone-price-prediction/) | 基于 ANN 的手机价格区间分类，包含数据、代码、模型和损失曲线 |
 | [鸢尾花分类](./iris-classification/) | 基于 ANN 的鸢尾花三分类，包含数据、代码、模型和可视化 |
+| [泰坦尼克号生存预测](./titanic-survival-prediction/) | 基于 ANN 的泰坦尼克号生存预测，包含数据清洗、分类模型和可视化 |
