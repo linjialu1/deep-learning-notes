@@ -15,7 +15,8 @@ deep-learning-notes/
 ├── docs/
 │   ├── 01-pytorch/           # PyTorch 框架
 │   ├── 02-neural-network/    # 神经网络基础
-│   └── 03-cnn/                # 卷积神经网络
+│   ├── 03-cnn/                # 卷积神经网络
+│   └── 05-nlp/                # 自然语言处理
 ├── practice/                  # 实战练习项目
 │   ├── phone-price-prediction/  # 手机价格预测
 │   ├── iris-classification/     # 鸢尾花分类
@@ -32,6 +33,7 @@ deep-learning-notes/
 | [01 - PyTorch 框架](./docs/01-pytorch/) | 张量创建与操作、自动微分、模型构建流程 | 已完成 |
 | [02 - 神经网络基础](./docs/02-neural-network/) | 激活函数、参数初始化、损失函数、反向传播、优化方法 | 已完成 |
 | [03 - 卷积神经网络](./docs/03-cnn/) | 卷积层、池化层、图像分类实战 | 已完成 |
+| [04 - 自然语言处理](./docs/05-nlp/) | 文本预处理、文本表示、NLP基础 | 学习中 |
 | [实战练习](./practice/) | 手机价格预测、鸢尾花分类、泰坦尼克号生存预测 | 已完成 |
 
 ## 环境清单
@@ -45,6 +47,7 @@ deep-learning-notes/
 - [x] 神经网络基础概念
 - [x] 实战项目练习（U-Net 图像分割）
 - [x] 卷积神经网络（CNN）
+- [ ] 自然语言处理（NLP）—— 学习中
 
 ---
 
