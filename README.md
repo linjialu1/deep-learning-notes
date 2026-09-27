@@ -16,7 +16,8 @@ deep-learning-notes/
 │   ├── 01-pytorch/           # PyTorch 框架
 │   ├── 02-neural-network/    # 神经网络基础
 │   ├── 03-cnn/                # 卷积神经网络
-│   └── 05-nlp/                # 自然语言处理
+│   ├── 05-nlp/                # 自然语言处理
+│   └── 06-api/                # 常用 API 手册
 ├── practice/                  # 实战练习项目
 │   ├── phone-price-prediction/  # 手机价格预测
 │   ├── iris-classification/     # 鸢尾花分类
@@ -34,6 +35,7 @@ deep-learning-notes/
 | [02 - 神经网络基础](./docs/02-neural-network/) | 激活函数、参数初始化、损失函数、反向传播、优化方法 | 已完成 |
 | [03 - 卷积神经网络](./docs/03-cnn/) | 卷积层、池化层、图像分类实战 | 已完成 |
 | [04 - 自然语言处理](./docs/05-nlp/) | 文本预处理、文本表示、NLP基础 | 学习中 |
+| [API 手册](./docs/06-api/) | 所有学过的 API 作用与参数说明 | 持续更新 |
 | [实战练习](./practice/) | 手机价格预测、鸢尾花分类、泰坦尼克号生存预测 | 已完成 |
 
 ## 环境清单
